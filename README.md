@@ -12,3 +12,5 @@ The CSV file obtained from kaggle.com contains 13 columns and 150,500 rows. This
 Questions we hope to answer:
 
 Areas where crime is committed in San Francisco. 
+
+Can we predict whether or not a person will be arrested and booked based on their crime?
