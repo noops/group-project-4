@@ -14,3 +14,12 @@ Questions we hope to answer:
 Areas where crime is committed in San Francisco. 
 
 Can we predict whether or not a person will be arrested and booked based on their crime?
+
+
+type of crime that happens per area
+    thefts happen more in certain neighborhood?
+    type of crime by neighborhood 
+    predict what type of crime has been committed by neighborhood? 
+    
+    areas where none resolution was reached 
+    chart of some kind 
