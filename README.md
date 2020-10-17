@@ -20,6 +20,8 @@ Our goal is to use a machine learning model to predict outcomes based on the dat
 2. Are we able to predict the type/category of crime based on the day, time and location of the crime?
 3. Can we predict if certain areas are more lenient/strict than others when it comes to their outcomes based on the resolution and location?
 
+
 ## Group Communication Protocols
 - Slack group4 channel
 - Group meetings on Sundays to go over the final Segment submission
+
