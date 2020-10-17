@@ -1,25 +1,27 @@
-# San Francisco Crime Predictor
+# <span style="color: red">San Francisco Crime Predictor</span>
+
+![](./images/sf_img.jpg)
 
 
-Selected Topic:
+## Selected Topic
+Our group selected the San Francisco Crime Dataset for the following reasons:
+1. The data is clear and easy to understand. 
+2. The data is large enough to support different predictions.
+3. Data visualizations can be easily produced.
 
-We selected this dataset https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset. Our goal is to use machine learing to predict crimes. This topic was selected because we think we can create a binary classifier that will decide whether or not a person will be arrested and booked based on the crime committed.
+## Description of the Source of Data
+We obtained the data from Kaggle https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset in the form of a CSV file. 
+- It contains 13 columns and 150,500 rows
+- The data provides information such as the day, time, location, description, resolution, etc. of the crimes reported.
 
-Description of the data source:
-
-The CSV file obtained from kaggle.com contains 13 columns and 150,500 rows. This data includes geographic data that will be mapped to show the areas where crimes happen. 
-
-Questions we hope to answer:
-
-Areas where crime is committed in San Francisco. 
-
-Can we predict whether or not a person will be arrested and booked based on their crime?
+## Goals and Information We Hope to Answer
+Our goal is to use a machine learning model to predict outcomes based on the data we have. The following are some questions we hope to answer:
+1. Can we predict whether or not a person will be arrested and booked based on their crime?
+2. Are we able to predict the type/category of crime based on the day, time and location of the crime?
+3. Can we predict if certain areas are more lenient/strict than others when it comes to their outcomes based on the resolution and location?
 
 
-type of crime that happens per area
-    thefts happen more in certain neighborhood?
-    type of crime by neighborhood 
-    predict what type of crime has been committed by neighborhood? 
-    
-    areas where none resolution was reached 
-    chart of some kind 
+## Group Communication Protocols
+- Slack group4 channel
+- Group meetings on Sundays to go over the final Segment submission
+
