@@ -2,7 +2,7 @@
 
 ## **Data Cleaning and Analysis** 
 
-**Pandas** is the primary tool used for initial data analysis and cleaning of this data set. Pandas is a powerful library within the Python  programming language  that allows analyzing, organizing, sorting, filtering, pivoting, aggregating, calculating, a data set. Additional datal analysis will be executed using **Python** and it's associated packages. 
+**Pandas** is the primary tool used for initial data analysis and cleaning of this data set. Pandas is a powerful library within the Python  programming language  that allows analyzing, organizing, sorting, filtering, pivoting, aggregating, calculating, a data set. Additional datal analysis will be executed using **Python** and its associated packages. 
 
 ## **Database Storage**
 
