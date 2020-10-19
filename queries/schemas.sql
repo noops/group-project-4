@@ -15,3 +15,22 @@ CREATE TABLE incident_info (
 	"Location" character varying(50),
 	"PdId" bigint
 );
+
+-- Creation of incident_cleaned table
+
+CREATE TABLE incident_cleaned (
+	"Category" character varying(50),
+	"PdDistrict" character varying(50),
+	"Resolution" character varying(50)
+);
+
+-- Creation of geo table
+
+CREATE TABLE geo (
+	"IncidntNum" int,
+	"Date" date,
+	"Address" character varying(100),
+	"X" numeric(15,12),
+	"Y" numeric(15,12),
+	"Location" character varying(50)
+);
