@@ -16,7 +16,8 @@ CREATE TABLE geographic (
 	"Address" character varying(100),
 	"X" numeric(15,12),
 	"Y" numeric(15,12),
-	"Location" character varying(50)
+	"Location" character varying(50),
+	"ZipCode" int
 );
 
 -- Creation of crime_dates table
