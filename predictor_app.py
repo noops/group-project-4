@@ -1,6 +1,5 @@
 import flask
 from flask import render_template
-from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 import pandas as pd
 import pickle
@@ -26,21 +25,30 @@ def main():
 
         #create dataframe for model
         input_variables = pd.DataFrame([[day_of_week, time_of_day, police_district, crime_category]], columns=['Dow', 'Tod', 'district', 'category'], dtype=str, index=['index'])
+        #get dummy vals for strings
         dummy_df = pd.get_dummies(input_variables)
+        
+        #get missing columns 
+        features = model.n_features_
+        number_of_columns = len(dummy_df.columns)
+        missing_columns = features - number_of_columns
+        
+        #create new columns filled with zero to reach 50 columns for model to run 
+        for column in range(missing_columns):
+            dummy_df[column]=0
+
         #get models prediction
-        prediction = model.predict(dummy_df)[0]
+        prediction = model.predict(dummy_df)
     
-        def final_result(prediction):
-            if prediction == 0:
-                jail_time_text = "You've been arrested."
-                return jail_time_text
-            else: 
-                no_jail_time_text = "It's your lucky day."
-                return no_jail_time_text
+        # def final_result(prediction):
+        #     if prediction == 0:
+        #         return "You've been arrested"
+        #     else: 
+        #         return "It's your lucky day."
             
             
 
-        return render_template('index.html', prediction_text = final_result )
+        return render_template('index.html', prediction_text = prediction )
 
 
 
