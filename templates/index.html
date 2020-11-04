@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+      background-image: url(https://images.unsplash.com/photo-1575648048241-a2701dd251ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <div class="jumbotron bg-transparent">
+    <h1><font 
+    color="white"
+    </font>
+      San Francisco Crime Indicator</h1>
+    <p2>Perform analysis on various crimes in the San Franciso metropolitan area.</p2>
+  </div>
+<form action="{{url_for('main')}}" method="post">
+<body>
+        <label for="Weekdays">Weekday:</label>
+        <select name="Weekdays" id="Weekdays" required="required">
+            <option value="" disabled selected>Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+</body>
+<body>
+        <label for="ToD">Time of Day:</label>
+        <select name="ToD" id="ToD" required="required">
+            <option value="" disabled selected>Time </option>
+            <option value="12am">12am</option>
+            <option value="1am">1am</option>
+            <option value="2am">2am</option>
+            <option value="3am">3am</option>
+            <option value="4am">4am</option>
+            <option value="5am">5am</option>
+            <option value="6am">6am</option>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11am</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+            <option value="8pm">8pm</option>
+            <option value="9pm">9pm</option>
+            <option value="10pm">10pm</option>
+            <option value="11pm">11pm</option>
+        </select>
+</body>
+<body>
+        <label for="District">Police District:</label>
+        <select name="District" id="District" required="required">
+            <option value="" disabled selected>District</option>
+            <option value="Bayview">Bayview</option>
+            <option value="Central">Central</option>
+            <option value="Ingleside">Ingleside</option>
+            <option value="Mission">Mission</option>
+            <option value="Park">Park</option>
+            <option value="Southern">Southern</option>
+            <option value="Taraval">Taraval</option>
+            <option value="Tenderlion">Tenderlion</option>
+        </select>
+</body>
+<body>
+        <label for="Crime Category">Crime Category:</label>
+        <select name="Category" id="Category" required="required">
+            <option value="" disabled selected>Category</option>
+            <option value="Larceny/Theft">Larceny/Theft</option>
+            <option value="Other Offenses">Other Offenses</option>
+            <option value="Non-Criminal">Non-Criminal</option>
+            <option value="Assault">Assault</option>
+            <option value="Vandalism">Vandalism</option>
+            <option value="Vehicle Theft">Vehicle Theft</option>
+            <option value="Outstanding Warrant">Outstanding Warrant</option>
+            <option value="Burglary">Burglary</option>
+            <option value="Drugs/Narcotics">Drugs/Narcotics</option>
+        </select>
+</body>
+<button type="submit" class="btn btn-primary btn-block btn-small">Predict</button>
+</form>
+<br>
+   <br>
+   {{ prediction_text }}
+</html>
