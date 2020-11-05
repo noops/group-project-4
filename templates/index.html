@@ -16,7 +16,7 @@
     <h1><font 
     color="white"
     </font>
-      San Francisco Crime Indicator</h1>
+      San Francisco Crime Predictor</h1>
     <p2>Perform analysis on various crimes in the San Franciso metropolitan area.</p2>
   </div>
 <form action="{{url_for('main')}}" method="post">
@@ -95,6 +95,18 @@
 <button type="submit" class="btn btn-primary btn-block btn-small">Predict</button>
 </form>
 <br>
-   <br>
-   {{ prediction_text }}
+<br>
+<div class="result" align="center">
+  {% if result %}
+    {% for variable, value in original_input.items() %}
+      <b>{{ variable }}</b> : {{ value }}
+    {% endfor %}
+  <br>
+    
+     <p style="font-size:50px">{{ result }}</p>
+  {% endif %}
+</div>
+
+
+
 </html>

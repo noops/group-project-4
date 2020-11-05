@@ -23,10 +23,13 @@ def main():
         police_district = flask.request.form['District']
         crime_category = flask.request.form['Category']
 
+
         #create dataframe for model
         input_variables = pd.DataFrame([[day_of_week, time_of_day, police_district, crime_category]], columns=['Dow', 'Tod', 'district', 'category'], dtype=str, index=['index'])
         #get dummy vals for strings
         dummy_df = pd.get_dummies(input_variables)
+
+        
         
         #get missing columns 
         features = model.n_features_
@@ -39,16 +42,21 @@ def main():
 
         #get models prediction
         prediction = model.predict(dummy_df)
-    
-        # def final_result(prediction):
-        #     if prediction == 0:
-        #         return "You've been arrested"
-        #     else: 
-        #         return "It's your lucky day."
-            
-            
 
-        return render_template('index.html', prediction_text = prediction )
+        print(prediction)
+            
+            
+        if prediction == 1:
+            outcome = "You've committed a crime and gotten away"
+        else:
+            outcome = "You've most likely been arrested"
+
+        return render_template('index.html', 
+        original_input={'Day of Week': day_of_week, 
+                        'Time of Day': time_of_day, 
+                        'Police District': police_district, 
+                        'Crime Category': crime_category}, 
+        result = outcome )
 
 
 
