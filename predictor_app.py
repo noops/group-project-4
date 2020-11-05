@@ -17,31 +17,33 @@ def main():
         return render_template('index.html')
     
     if flask.request.method == 'POST':
-        
-        #dictionaries of our encoded values
-        pddistrict_dict = {'7': 'Bayview', '0': 'Central', '9': 'Ingleside', '3': 'Mission', '4': 'Park', '8': 'Southern', '2': 'Taraval', '1': 'Tenderlion', '6': 'Richmond', '5': 'Northern'}        
-        
-        category_dict = {'16': 'Weapon Laws', '15': 'Warrants', '6': 'Non-Criminal', '0': 'Assault', '8': 'Other Offenses', '5': 'Missing Person', '4': 'Larceny/Theft', '1': 'Burglary', 
-        '7': 'Other', '9': 'Robbery', '3': 'Fraud', '2': 'Drug/Narcotic', '14': 'Vehicle theft', '13': 'Vandalism', '10': 'Secondary Codes', '11': 'Suspicious Activity', '12': 'Trespass'}
-        
-        day = {'0': 'Friday', '1': 'Monday', '5': 'Tuesday', '2': 'Saturday', '4': 'Thursday', '3': 'Sunday', '6': 'Wednesday'}
-        time = {'2':'Morning', '0':'Afternoon', '3':'Night', '1':'Evening'}
-        
         #extract user input from webpage
-        dayOfWeek = flask.request.form['days']
-        timeOfDay = flask.request.form['time_of_day']
-        pddistrict = flask.request.form['District']
-        category = flask.request.form['Category']
+        day_of_week = flask.request.form['Weekdays']
+        time_of_day = flask.request.form['ToD']
+        police_district = flask.request.form['District']
+        crime_category = flask.request.form['Category']
 
-        
 
         #create dataframe for model
-        input_variables = pd.DataFrame([[dayOfWeek, timeOfDay, pddistrict, category]], columns=['day', 'time_of_day', 'district', 'category'], dtype=str, index=['index'])
+        input_variables = pd.DataFrame([[day_of_week, time_of_day, police_district, crime_category]], columns=['Dow', 'Tod', 'district', 'category'], dtype=str, index=['index'])
+        #get dummy vals for strings
+        dummy_df = pd.get_dummies(input_variables)
 
-       
+        
+        
+        #get missing columns 
+        features = model.n_features_
+        number_of_columns = len(dummy_df.columns)
+        missing_columns = features - number_of_columns
+        
+        #create new columns filled with zero to reach 50 columns for model to run 
+        for column in range(missing_columns):
+            dummy_df[column]=0
 
         #get models prediction
-        prediction = model.predict(input_variables)
+        prediction = model.predict(dummy_df)
+
+        print(prediction)
             
             
         if prediction == 1:
@@ -50,10 +52,10 @@ def main():
             outcome = "You've most likely been arrested"
 
         return render_template('index.html', 
-        original_input={'Day of Week': day.get(dayOfWeek), 
-                        'Time of Day': time.get(timeOfDay), 
-                        'Police District': pddistrict_dict.get(pddistrict), 
-                        'Crime Category': category_dict.get(category)}, 
+        original_input={'Day of Week': day_of_week, 
+                        'Time of Day': time_of_day, 
+                        'Police District': police_district, 
+                        'Crime Category': crime_category}, 
         result = outcome )
 
 

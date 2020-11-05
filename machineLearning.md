@@ -22,27 +22,12 @@ Since our dataset consists primarily of non-ordinal categorical variables sci-ki
 
 description of how data was split into training and testing sets
 
-Since almost 60% of the resolutions are "NONE" randomly selecting a resolution gives a pretty good chance of selecting "NONE". In order to better utilize the model our training split is 50% of the data. The remaining 50% is split into 25% testing data and 25% validation data. This allows us to test the model twice, once with the testing data, and again with the validation set. This ensures that our accuracy numbers are accurate. 
+Since almost 60% of the resolutions are "NONE" randomly selecting a resolution gives a pretty good chance of selecting "NONE". In order to better utilize the model our training split is 50% of the data. The remaining 50% is split into 25% testing data and 25% validation data. 
 
 ## Explanation of model choice
 
 ML model comparisons 
 
-Random forests are robust to overfitting, can handle thousands of input variables without variable decision, and run efficiently on large datasets. In addition to that random forests handle categorical data well, and run quickly. We tested an ada-boost classifier, easy ensemble classifier, support vector machine, and a random forest. Out of those machine learning models, the random forest returned close to the highest initial accuracy score, and it ran the fastest. The graph below shows the feature ranking in the baseline model which used default parameters. This model was improved upon by reducing the number of dimensions.  
+Random forests are robust to overfitting, can handle thousands of input variables without variable decision, and run efficiently on large datasets. In addition to that random forests handle categorical data well, and run quickly. We tested an ada-boost classifier, easy ensemble classifier, support vector machine, and a random forest. Out of those machine learning models, the random forest returned close to the highest initial accuracy score, and it ran the fastest. The graph below shows the feature ranking in the baseline model which used default parameters. This model was improved upon by reducing the number of dimensions, and splitting the training a
 
 ![](./images/GINI_graph.png)
-
-## Accuracy Score
-
-Our random forest model trained on our principal component dataset achieved an accuracy score of 98%. 
-
-## Additional Training
-
-Ideally we would implement a storage system for the user inputs and use those to continually retrain our model to get even more accurate results. 
-
-
-## Problems Encountered
-
-changes in model choice
-
-After creating our interactive dashboard and linking it to our machine learning model I encountered a value error. We initially trained our model with an encoded dataframe containing 63 columns. This was reduced to 50 columns via principal component analysis, and the model used for the dashboard was trained with this dataframe. Our dashboard only asks for 4 user inputs right now. It does not seem realistic to ask the user to input 50 features. Right now the dataframe created with user input is populated with columns containing 0 to meet the 50 feature requirement for the model to predict. This is definitely causing accuracy issues. 
