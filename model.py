@@ -6,13 +6,15 @@ import pickle
 
 
 #load data
-df = pd.read_csv('/Users/bkirton/Desktop/sanFranCrimePredictor/Resources/pca_df.csv')
-
+df = pd.read_csv('/Users/bkirton/Desktop/sanFranCrimePredictor/Resources/encoded_df.csv')
+df = df.drop(columns='Descriptions')
+df = df.drop(columns='Months')
+df = df.drop(columns='ZipCode')
 #create features
-X = df.drop("Target", axis=1)
+X = df.drop("Resolutions", axis=1)
 
 #create target
-y = df["Target"]
+y = df["Resolutions"]
 
 #train test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=2020, test_size=0.5)
