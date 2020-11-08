@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+  <header>
+
+  <style>
+      body{
+        background-image:url(https://images.unsplash.com/photo-1531693526428-5c84ee4bb88d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 1000px;
+
+      }
+
+  </style>
+  <div class="jumbotron text-center bg-transparent align-items-end" style="height: 200px;">
+    <h1 class="font-weight-bold" 
+    <h1>
+        <font 
+        color="white"
+        </font> 
+        San Franciso Crime Predictor 
+    </h1>
+
+    
+<!--Set up modal-->
+<button type="button" class="btn btn-gray" font color="white"  data-toggle="modal" data-target="#ourapproach">
+  <h4>
+      <font
+          color="white"
+      </font>
+      Our Approach
+    </h4>
+    
+    </button>
+<!-- Modal -->
+<div class="modal fade" id="ourapproach" tabindex="-1" role="dialog" aria-labelledby="ourapproachTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ourapproachTitle">Our Approach</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <font
+          color="black">
+          
+Our approach started with reviwing various data sets from Kappgle. We selected the San Francisco Crime Dataset because the data is clear and easy to understand, large enough to support different predictions, lead to precise Data visualizations. Our source data obtained from Kaggle (https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset) came in the form of a CSV file containing 13 columns and 150,500 rows
+of data. The data provides information such as the day, time, location, description, resolution, etc. of the crimes reported. There are three goals that we hope to answer in this assignment. First, is to use a machine learning model to predict outcomes based on the data we have. Second, we hope to answer the following questions: 1. Can we predict whether or not a person will be arrested and booked based on their crime?
+2. Are we able to predict the type/category of crime based on the day, time and location of the crime? 3. Can we predict if certain areas are more lenient/strict than others when it comes to their outcomes based on the resolution and location?
+</font> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--new button-->
+<button type="button" class="btn btn-tranparent" font color="white"  data-toggle="modal" data-target="#ourtechology">
+    <h4>
+        <font
+            color="white"
+        </font>
+       Our Technology
+      </h4>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="ourtechology" tabindex="-1" role="dialog" aria-labelledby="ourtechologyTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ourtechologyTitle">Our Approach</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <font
+          color="black">
+  
+Data Cleaning and Analysis.
+Pandas is the primary tool used for initial data analysis and cleaning of this data set. Pandas is a powerful library within the Python programming language that allows analyzing, organizing, sorting, filtering, pivoting, aggregating, calculating, a data set. Additional datal analysis will be executed using Python and its associated packages. 
+Database Storage.
+Our team will utilize PostgreSQL to store data acquired for this project. PostgreSQL is a reliable and powerful, open source object-relational database system that is very suitable for this project.
+
+Machine Learning.
+A variety of machine learning models are being evaluated to evaluate the limitations and benefits of each prior to deciding. We will utilize Scikit-learn as a classifier. 
+
+Dashboard
+Several different approaches to data display are in evaluation including initial data analysis with tools such as Matplotlib. Further visualization tools may include Plotly or Tableau.  These visualizations will be used to create an interactive dashboard. While the approach to this dashboard is currently being selected, one approach to host this content is through Github Pages.
+        
+</font> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--new button-->
+<button type="button" class="btn btn-tranparent" font color="white"  data-toggle="modal" data-target="#ourresults">
+    <h4>
+        <font
+            color="white"
+        </font>
+       Our Results
+      </h4>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="ourresults" tabindex="-1" role="dialog" aria-labelledby="ourresultsTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ourresultsTitle">Our Results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <font
+          color="black">
+  
+We can put our interpretations or results here  
+</font> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--images-->
+<body> 
+    
+<div class="text-center" style="height: 200px;">
+
+    <div class="align-end">
+    <img src="../static/images/Crimes_Resolution.png" alt="resolutions_by_crime">
+    <img src="../static/images/categories.png" alt="crime_categories">
+    <img src="../static/images/Weekly_Crimes.png" alt="weekly_crimes"> 
+</div>
+
+</div>
+       <!--Crime Predictor-->
+        <div class="container bg-transparent">
+            <div class="Jumbotron bg-transparent align-items-end" style="height: 50px;">
+            </div>
+            <div class="text-center">
+                <h2> 
+                Create a Crime</h2>
+                </div>
+                <div class="d-flex flex-wrap align-items-end justify-content-center bg-transparent">
+                    
+                <div class="p-2 border"><label for="Weekdays">Weekday:</label>
+                    <select name="Weekdays" id="Weekdays" required="required">
+                        <option value="" disabled selected>Day</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>  </div>
+                <div class="p-2 border"><label for="ToD">Time of Day:</label>
+                    <select name="ToD" id="ToD" required="required">
+                        <option value="" disabled selected>Time </option>
+                        <option value="12am">12am</option>
+                        <option value="1am">1am</option>
+                        <option value="2am">2am</option>
+                        <option value="3am">3am</option>
+                        <option value="4am">4am</option>
+                        <option value="5am">5am</option>
+                        <option value="6am">6am</option>
+                        <option value="7am">7am</option>
+                        <option value="8am">8am</option>
+                        <option value="9am">9am</option>
+                        <option value="10am">10am</option>
+                        <option value="11am">11am</option>
+                        <option value="12pm">12pm</option>
+                        <option value="1pm">1pm</option>
+                        <option value="2pm">2pm</option>
+                        <option value="3pm">3pm</option>
+                        <option value="4pm">4pm</option>
+                        <option value="5pm">5pm</option>
+                        <option value="6pm">6pm</option>
+                        <option value="7pm">7pm</option>
+                        <option value="8pm">8pm</option>
+                        <option value="9pm">9pm</option>
+                        <option value="10pm">10pm</option>
+                        <option value="11pm">11pm</option>
+                    </select></div>
+                <div class="p-2 border"><label for="District">Police District:</label>
+                    <select name="District" id="District" required="required">
+                        <option value="" disabled selected>District</option>
+                        <option value="Bayview">Bayview</option>
+                        <option value="Central">Central</option>
+                        <option value="Ingleside">Ingleside</option>
+                        <option value="Mission">Mission</option>
+                        <option value="Park">Park</option>
+                        <option value="Southern">Southern</option>
+                        <option value="Taraval">Taraval</option>
+                        <option value="Tenderlion">Tenderlion</option>
+                    </select></div>
+                <div class="p-2 border"><label for="Crime Category">Crime Category:</label>
+                    <select name="Category" id="Category" required="required">
+                        <option value="" disabled selected>Category</option>
+                        <option value="Larceny/Theft">Larceny/Theft</option>
+                        <option value="Other Offenses">Other Offenses</option>
+                        <option value="Non-Criminal">Non-Criminal</option>
+                        <option value="Assault">Assault</option>
+                        <option value="Vandalism">Vandalism</option>
+                        <option value="Vehicle Theft">Vehicle Theft</option>
+                        <option value="Outstanding Warrant">Outstanding Warrant</option>
+                        <option value="Burglary">Burglary</option>
+                        <option value="Drugs/Narcotics">Drugs/Narcotics</option>
+                    </select>
+                </div>
+
+            </div>
+                <div class="container"> 
+                <button type="submit" class="btn btn-danger btn-block btn-lg ">Predict</button>
+                </form>
+        </div>
+            {{ prediction_text }}   
+  </body>
+
+</html>
