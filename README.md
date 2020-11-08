@@ -25,3 +25,6 @@ Our goal is to use a machine learning model to predict outcomes based on the dat
 - Slack group4 channel
 - Group meetings on Sundays to go over the final Segment submission
 
+## google slides
+These slides contain graphs from our analysis as well as a description of how the dashboard will operate. 
+https://docs.google.com/presentation/d/15_He1YvD366ukodzkfbG418iSVmOcC6Re9f0O5FfMeI/edit#slide=id.ga64223047d_0_0
