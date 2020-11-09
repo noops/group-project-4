@@ -11,10 +11,11 @@
 <div align="center">David Phipps</div>
 
 ## Table of Contents
-- [Selected Topic](link)
-- [Source of Data](link)
-- [Goals](link)
-- [Links](link)
+- [Selected Topic](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#selected-topic)
+- [Source of Data](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#source-of-data)
+- [Goals](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#goals)
+- [Technologies Used](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#technologies-used)
+- [Links](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#links)
 
 ## Selected Topic
 Our group selected the San Francisco Crime Dataset for the following reasons:
