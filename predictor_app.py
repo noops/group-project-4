@@ -3,7 +3,9 @@ from flask import render_template
 import numpy as np
 import pandas as pd
 import pickle
+
 import re
+
 
 #initialize the app
 app = flask.Flask(__name__)
@@ -75,6 +77,33 @@ def main():
                         'Crime Category': category.get(crime_category),
                         'Zip Code': zip_code}, 
         result = outcome )  
+
+
+        #create dataframe for model
+        input_variables = pd.DataFrame([[day_of_week, time_of_day, police_district, crime_category]], columns=['Dow', 'Tod', 'district', 'category'], dtype=str, index=['index'])
+        
+
+        #get models prediction
+        prediction = model.predict(input_variables)
+
+        print(prediction)
+            
+            
+        if prediction == 1:
+            outcome = "You've committed a crime and gotten away"
+        else:
+            outcome = "You've most likely been arrested"
+
+
+        #day.get(day_of_week)
+        return render_template('index.html', 
+        original_input={'Day of Week': day.get(day_of_week), 
+                        'Time of Day': time.get(time_of_day), 
+                        'Police District': pddistrict.get(police_district), 
+                        'Crime Category': category.get(crime_category)}, 
+        result = outcome )
+
+
 
     
 
