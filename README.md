@@ -53,5 +53,5 @@ Our goal is to analyze the data and determine:
 - SQLAlchemy
 - TensorFlow
 ## Links
-#### [Kaggle](https://www.kaggle.com/roshansharm/sanfranciso-crime-datasetin)
+#### [Kaggle](https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset)
 #### [Google Slides](https://docs.google.com/presentation/d/15_He1YvD366ukodzkfbG418iSVmOcC6Re9f0O5FfMeI/edit#slide=id.ga64223047d_0_0)
