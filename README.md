@@ -24,7 +24,7 @@ Our group selected the San Francisco Crime Dataset for the following reasons:
 3. Data visualizations can be easily produced.
 
 ## Source of Data
-We obtained the data from [Kaggle](https://www.kaggle.com/roshansharm/sanfranciso-crime-datasetin) the form of a CSV file. 
+We obtained the data from [Kaggle](https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset). 
 - It contains 13 columns and 150,500 rows
 - The data provides information such as the day, time, location, description, resolution, etc. of the crimes reported.
 
