@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF-Crime Predictor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <body style="font-family: 'Courier New', Courier, monospace";
+    class= "bg-warning"></body>
+    <div class="wrapper">
+        <nav class="navbar navbar-dark bg-warning navbar-expand-lg">
+            <a class="navbar-brand" href="https://github.com/noops/sanFranCrimePredictor"><b>GitHub- sanFranCrimePredictor</b></a>
+        </nav>
+    </div>
+    <div class="jumbotron">
+        <h1 aligned="left">
+            <b>San Francisco Crime Predictor</b></h1>
+        <p aligned="left" 
+        style="font-size: x-large">Create a crime</p2>
+        <br>
+    </div>
+    <br>
+<form action="{{url_for('main')}}" method="post">
+<body>
+    <font color="black" ></font>
+        <label for="Weekdays"><b>Weekday:</b></label>
+        <select name="Weekdays" id="Weekdays" required="required">
+            <option value="" disabled selected>Day</option>
+            <option value="1">Monday</option>
+            <option value="5">Tuesday</option>
+            <option value="6">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="0">Friday</option>
+            <option value="2">Saturday</option>
+            <option value="3">Sunday</option>
+        </select>
+</body>
+<body>
+        <label for="ToD"><b>Time of Day:</b></label>
+        <select name="ToD" id="ToD" required="required">
+            <option value="" disabled selected>Time </option>
+            <option value="2">Morning</option>
+            <option value="0">Afternoon</option>
+            <option value="1">Evening</option>
+            <option value="3">Night</option>
+        </select>
+</body>
+<body>
+        <label for="District"><b>Police District:</b></label>
+        <select name="District" id="District" required="required">
+            <option value="" disabled selected>District</option>
+            <option value="0">Bayview</option>
+            <option value="1">Central</option>
+            <option value="2">Ingleside</option>
+            <option value="3">Mission</option>
+            <option value="4">Northern</option>
+            <option value="5">Park</option>
+            <option value="6">Richmond</option>
+            <option value="7">Southern</option>
+            <option value="8">Taraval</option>
+            <option value="9">Tenderlion</option>
+        </select>
+</body>
+<body>
+        <label for="Crime Category"><b>Crime Category:</b></label>
+        <select name="Category" id="Category" required="required">
+            <option value="" disabled selected>Category</option>
+            <option value="0">Assault</option>
+            <option value="1">Burglary</option>
+            <option value="2">Drug/Narcotic</option>
+            <option value="3">Fraud</option>
+            <option value="4">Larceny/Theft</option>
+            <option value="5">Missing Person</option>
+            <option value="6">Non-Criminal</option>
+            <option value="7">Other</option>
+            <option value="8">Other Offenses</option>
+            <option value="9">Robbery</option>
+            <option value="10">Secondary Codes</option>
+            <option value="11">Suspicious Activity</option>
+            <option value="12">Trespass</option>
+            <option value="13">Vandalism</option>
+            <option value="14">Vehicle Theft</option>
+            <option value="15">Warrants</option>
+            <option value="16">Weapon Laws</option>
+        </select>
+</body>
+<body>
+    <label for="ZipCode"><b>Zip Code:</b></label>
+    <input type = "text" name="ZipCode" id = "ZipCode" placeholder="Enter Zip Code" required="required"/>
+</body>
+<button type="submit" class="block"><b>Predict</b></button>
+</form>
+<br>
+<br>
+<div class="result" align="center"  style="color:black">
+
+    {% if warning != "" %}
+        <p style="color: red; font-weight: bold;font-size:20px">{{ warning }}</p>
+        <br>
+    {% else %}
+        {% if result %}
+            {% for variable, value in original_input.items() %}
+                <b>{{ variable }}</b> : {{ value }}
+            {% endfor %}
+        <br>
+            <p style="font-size:50px" >{{ result }}</p>
+        {% endif %}
+    {% endif %}
+</div>
+
+<body>
+    <img src="../static/images/Crimes_Resolution.png" alt="resolutions_by_crime">
+    <img src="../static/images/categories.png" alt="crime_categories">
+    <img src="../static/images/Weekly_Crimes.png" alt="weekly_crimes"> 
+</body>
+</html>
