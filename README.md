@@ -3,12 +3,12 @@
 ![](./images/golden_gate.jpg)
 
 <div align="center"><b>Contributors</b></div>
-<div align="center">Ines Toledo Bordiu</div>
 <div align="center">Ben Kirton</div>
 <div align="center">Chris Ritter</div>
+<div align="center">David Phipps</div>
+<div align="center">Ines Toledo Bordiu</div>
 <div align="center">Lizett Rincon</div>
 <div align="center">William Davis</div>
-<div align="center">David Phipps</div>
 
 ## Table of Contents
 - [Selected Topic](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#selected-topic)
