@@ -3,12 +3,21 @@
 ![](./images/golden_gate.jpg)
 
 <div align="center"><b>Contributors</b></div>
+<<<<<<< HEAD
 <div align="center">Ines Toledo Bordiu</div>
 <div align="center">Ben Kirton</div>
 <div align="center">Chris Ritter</div>
 <div align="center">Lizett Rincon</div>
 <div align="center">William Davis</div>
 <div align="center">David Phipps</div>
+=======
+<div align="center">Ben Kirton</div>
+<div align="center">Chris Ritter</div>
+<div align="center">David Phipps</div>
+<div align="center">Ines Toledo Bordiu</div>
+<div align="center">Lizett Rincon</div>
+<div align="center">William Davis</div>
+>>>>>>> main
 
 ## Table of Contents
 - [Selected Topic](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#selected-topic)
@@ -34,7 +43,11 @@ Our goal is to analyze the data and determine:
 2. Determine the resolution outcomes.
 3. Analyze the date, time and location per crime.
 4. Finally, use a Machine Learning Model in order to try and predict the resolution outcomes based on the data we have.
+<<<<<<< HEAD
 - Can we predict wheter or not a person will be <b>arrested and booked</b> based on the data provided?
+=======
+- Can we predict whether or not a person will be <b>arrested and booked</b> based on the data provided?
+>>>>>>> main
 - If so, how <b>reliable</b> is the data?
 
 ## Technologies Used

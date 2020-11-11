@@ -1,4 +1,10 @@
 # Config file
 config.py
 .DS_Store
+<<<<<<< HEAD
 __pycache__
+=======
+.pkl
+__pycache__
+
+>>>>>>> main

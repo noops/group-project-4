@@ -1,0 +1,12 @@
+click==7.1.2
+Flask==1.1.2
+cytoolz==0.10.1
+Cython==0.29.21
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+Werkzeug==1.0.1
+numpy==1.18.5
+pandas==1.0.4
+requests==2.24.0
+imbalanced-learn==0.7.0
