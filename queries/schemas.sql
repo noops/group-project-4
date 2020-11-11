@@ -1,36 +1,30 @@
--- Creation of incident_info table
+-- Creation of sf_crime table
 
-CREATE TABLE incident_info (
+CREATE TABLE sf_crime (
+	"PdId" bigint,
 	"IncidntNum" int,
 	"Category" character varying(50),
 	"Descript" character varying(100),
-	"DayOfWeek" character varying(10),
-	"Date" date,
-	"Time" time,
+	"Resolution" character varying(50)	
+);
+
+-- Creation of geographic table
+
+CREATE TABLE geographic (
+	"PdId" bigint,
 	"PdDistrict" character varying(50),
-	"Resolution" character varying(50),
 	"Address" character varying(100),
 	"X" numeric(15,12),
 	"Y" numeric(15,12),
 	"Location" character varying(50),
-	"PdId" bigint
+	"ZipCode" int
 );
 
--- Creation of incident_cleaned table
+-- Creation of crime_dates table
 
-CREATE TABLE incident_cleaned (
-	"Category" character varying(50),
-	"PdDistrict" character varying(50),
-	"Resolution" character varying(50)
-);
-
--- Creation of geo table
-
-CREATE TABLE geo (
-	"IncidntNum" int,
+CREATE TABLE crime_dates (
+	"PdId" bigint,
+	"DayOfWeek" character varying(10),
 	"Date" date,
-	"Address" character varying(100),
-	"X" numeric(15,12),
-	"Y" numeric(15,12),
-	"Location" character varying(50)
+	"Time" time
 );

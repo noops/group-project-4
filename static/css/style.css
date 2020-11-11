@@ -1,0 +1,37 @@
+
+  
+body {
+  color: #f5d107;
+}
+.jumbotron {
+  background-image: url("../images/db_pic.jpg"); 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+img{
+    display: inline-block;
+    border: 1px solid #810909;
+    margin: 40px 20px;
+    overflow: hidden;
+    vertical-align: top;
+}
+label{
+    font-style:black;
+
+body {
+
+  color: #f5d107;
+}
+.jumbotron {
+  background-image: url("../images/db_pic.jpg"); 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+img{
+    display: inline-block;
+    border: 1px solid #810909;
+    margin: 40px 20px;
+    overflow: hidden;
+    vertical-align: top;
+
+}

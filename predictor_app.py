@@ -4,10 +4,15 @@ import numpy as np
 import pandas as pd
 import pickle
 
+import re
+
+
 #initialize the app
 app = flask.Flask(__name__)
 #load the model
 model = pickle.load(open('model.pkl', 'rb'))
+df = pd.read_csv('./Resources/encoded_df.csv')
+available_zips=df['ZipCode'].apply(str).unique()
 
 
 #redirect the api to homepage
@@ -34,6 +39,44 @@ def main():
         time_of_day = flask.request.form['ToD']
         police_district = flask.request.form['District']
         crime_category = flask.request.form['Category']
+        zip_code = flask.request.form['ZipCode']
+
+        warning=""
+        if (not re.match("941\\d{2}",zip_code)):
+            warning=f"'{zip_code}' doesn't match SFO ZipCode"
+            
+
+        # available_zips=['94103', '94124', '94108', '94102', '94109', '94158', '94122', '94116', '94112', '94104', '94110', '94132', '94114', '94131', '94134', '94117', '94115', '94105', '94127', '94118', '94111', '94123', '94107', '94130', '94129']
+        
+        if zip_code in available_zips:
+
+            #create dataframe for model
+            input_variables = pd.DataFrame([[day_of_week, time_of_day, police_district, crime_category, zip_code]], columns=['Dow', 'Tod', 'district', 'category', 'zip'], dtype=str, index=['index'])
+
+            #get models prediction
+            prediction = model.predict(input_variables)
+
+            print(prediction)
+                
+                
+            if prediction == 1:
+                outcome = "You've committed a crime and gotten away"
+            else:
+                outcome = "You've most likely been arrested"
+        
+        else:
+            
+            outcome = "No available data for introduced ZipCode."
+
+        # Print out final result
+        return render_template('index.html',
+        warning=warning, 
+        original_input={'Day of Week': day.get(day_of_week), 
+                        'Time of Day': time.get(time_of_day), 
+                        'Police District': pddistrict.get(police_district), 
+                        'Crime Category': category.get(crime_category),
+                        'Zip Code': zip_code}, 
+        result = outcome )  
 
 
         #create dataframe for model
