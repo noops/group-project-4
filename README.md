@@ -34,7 +34,7 @@ Our goal is to analyze the data and determine:
 2. Determine the resolution outcomes.
 3. Analyze the date, time and location per crime.
 4. Finally, use a Machine Learning Model in order to try and predict the resolution outcomes based on the data we have.
-- Can we predict wheter or not a person will be <b>arrested and booked</b> based on the data provided?
+- Can we predict whether or not a person will be <b>arrested and booked</b> based on the data provided?
 - If so, how <b>reliable</b> is the data?
 
 ## Technologies Used
