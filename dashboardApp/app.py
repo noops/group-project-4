@@ -14,7 +14,7 @@ import json
 # url = 'https://group4ds-bucket.s3.amazonaws.com/model.pkl'
 # urllib.request.urlretrieve(url, 'model.pkl')
 model = pickle.load(open('model.pkl', 'rb'))
-df = pd.read_csv('./Resources/encoded_df.csv')
+df = pd.read_csv('../Resources/encoded_df.csv')
 
 # initialize the app
 app = flask.Flask(__name__)
@@ -89,7 +89,11 @@ def formpost():
                         'Crime Category': category.get(crime_category),
                         'Zip Code': zip_code}, 
         result = outcome )  
-        
+
+
+@app.route('/<markdown>', methods=['GET'])
+def marks(markdown):
+    return render_template(markdown + '.html')
 
 
 if __name__ == "__main__":
