@@ -19,6 +19,7 @@
 - [Model Selection](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#model-selection)
 - [Dashboard](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#dashboard)
 - [Technologies Used](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#technologies-used)
+- [Recommendations](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#recommendations)
 - [Links](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#links)
 
 ## Selected Topic
@@ -116,6 +117,12 @@ YOU'VE COMMITED A CRIME AND GOTTEN AWAY
 - Python
 - Scikit-learn
 - SQLAlchemy
+
+## Recommendations
+- Include analysis by gender, age and race using San Francisco’s demographics information.
+- Determine if certain areas (districts, zip codes) are more lenient than others when it comes to arrests.
+- Compare San Francisco statistics against other nearby cities.
+
 
 ## Links
 #### [San Francisco Crime Dataset](https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset)
