@@ -14,6 +14,10 @@
 - [Selected Topic](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#selected-topic)
 - [Source of Data](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#source-of-data)
 - [Goals](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#goals)
+- [Data Exploration](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#data-exploration)
+- [Machine Learning Analysis](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#machine-learning-analysis)
+- [Model Selection](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#model-selection)
+- [Dashboard](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#dashboard)
 - [Technologies Used](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#technologies-used)
 - [Links](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#links)
 
