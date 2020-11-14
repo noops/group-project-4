@@ -1,0 +1,38 @@
+
+  
+body {
+
+  color: #f5d107;
+}
+
+div.parallax {
+  /*The Image Used*/
+  background-image: url(https://tobyharriman.com/wp-content/uploads/2014/08/Different_Perspectives_of_SF.jpg);
+  /*Set a specific height */
+  height: 600px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment:fixed; 
+  background-position:center;
+  background-size: cover;
+}
+
+/* Header/Logo Title */
+.banner {
+  padding: 0px;
+  text-align: center;
+  background: transparent;
+  color: black;
+  
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
