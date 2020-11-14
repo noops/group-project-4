@@ -121,7 +121,7 @@ YOU'VE COMMITED A CRIME AND GOTTEN AWAY
 ## Recommendations
 - Include analysis by gender, age and race using San Francisco’s demographics information.
 - Determine if certain areas (districts, zip codes) are more lenient than others when it comes to arrests.
-- Compare San Francisco statistics against other nearby cities.
+- Compare San Francisco's statistics against other nearby cities.
 
 
 ## Links
