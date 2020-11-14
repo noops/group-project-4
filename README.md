@@ -51,7 +51,7 @@ The following graphs show some of the initial data exploration of our analysis:
 ![](./images/descript_tree_map.png)
 
 ### SF PD Districts
-![](./images/pd_districts.png)
+![](./images/Pd_districts.png)
 
 ### Daily Crime Rates
 ![](./images/daily_crimes.png)
