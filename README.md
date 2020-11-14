@@ -78,7 +78,7 @@ Balance Accuracy Score Results
 | Random Forest      | 98.92%  |   
 | AdaBoost  | 90.83%   |   
 | Decision Tree      | 98.11%  |   
-| Gaussian Naive Bayes  | 82.32%%   |   
+| Gaussian Naive Bayes  | 82.32%   |   
 | Gradient Boost     | 94.92%  |     
 
 ## Model Selection
