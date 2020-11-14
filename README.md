@@ -14,7 +14,12 @@
 - [Selected Topic](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#selected-topic)
 - [Source of Data](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#source-of-data)
 - [Goals](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#goals)
+- [Data Exploration](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#data-exploration)
+- [Machine Learning Analysis](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#machine-learning-analysis)
+- [Model Selection](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#model-selection)
+- [Dashboard](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#dashboard)
 - [Technologies Used](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#technologies-used)
+- [Recommendations](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#recommendations)
 - [Links](https://github.com/noops/sanFranCrimePredictor/tree/lizett_rincon#links)
 
 ## Selected Topic
@@ -47,7 +52,7 @@ The following graphs show some of the initial data exploration of our analysis:
 ![](./images/descript_tree_map.png)
 
 ### SF PD Districts
-![](./images/pd_districts.png)
+![](./images/Pd_districts.png)
 
 ### Daily Crime Rates
 ![](./images/daily_crimes.png)
@@ -74,7 +79,7 @@ Balance Accuracy Score Results
 | Random Forest      | 98.92%  |   
 | AdaBoost  | 90.83%   |   
 | Decision Tree      | 98.11%  |   
-| Gaussian Naive Bayes  | 82.32%%   |   
+| Gaussian Naive Bayes  | 82.32%   |   
 | Gradient Boost     | 94.92%  |     
 
 ## Model Selection
@@ -112,6 +117,12 @@ YOU'VE COMMITED A CRIME AND GOTTEN AWAY
 - Python
 - Scikit-learn
 - SQLAlchemy
+
+## Recommendations
+- Include analysis by gender, age and race using San Francisco’s demographics information.
+- Determine if certain areas (districts, zip codes) are more lenient than others when it comes to arrests.
+- Compare San Francisco's statistics against other nearby cities.
+
 
 ## Links
 #### [San Francisco Crime Dataset](https://www.kaggle.com/roshansharma/sanfranciso-crime-dataset)
