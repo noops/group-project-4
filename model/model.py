@@ -13,7 +13,7 @@ print(f"Importing data...\n")
 df = pd.read_csv('../Resources/encoded_df.csv')
 df = df.drop(columns='Descriptions')
 df = df.drop(columns='Months')
-df = df.drop(columns='ZipCode')
+
 # create features
 X = df.drop("Resolutions", axis=1)
 
