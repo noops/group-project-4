@@ -17,20 +17,7 @@
             <a class="navbar-brand" href="https://github.com/noops/sanFranCrimePredictor"><b>GitHub- sanFranCrimePredictor</b></a>
         </nav>
     </div>
-    <div class="jumbotron">
-        <h1 aligned="left">
-            <b>San Francisco Crime Predictor</b></h1>
-        <p aligned="left" 
-        style="font-size: x-large">Create a crime</p2>
-        <br>
-    </div>
     <br>
-<form action="{{url_for('main')}}" method="post">
-<body>
-    <font color="black" ></font>
-        <label for="Weekdays"><b>Weekday:</b></label>
-
-    <title>Document</title>
 </head>
 <style>
     body{
@@ -50,7 +37,7 @@
   <br>
 <form action="{{url_for('main')}}" method="post">
 <body>
-        <label for="Weekdays">Weekday:</label>
+        <label for="Weekdays"><b>Weekday:</b></label>
 
         <select name="Weekdays" id="Weekdays" required="required">
             <option value="" disabled selected>Day</option>
@@ -67,8 +54,6 @@
 
         <label for="ToD"><b>Time of Day:</b></label>
 
-        <label for="ToD">Time of Day:</label>
-
         <select name="ToD" id="ToD" required="required">
             <option value="" disabled selected>Time </option>
             <option value="2">Morning</option>
@@ -81,7 +66,7 @@
 
         <label for="District"><b>Police District:</b></label>
 
-        <label for="District">Police District:</label>
+        
 
         <select name="District" id="District" required="required">
             <option value="" disabled selected>District</option>
@@ -101,7 +86,7 @@
 
         <label for="Crime Category"><b>Crime Category:</b></label>
 
-        <label for="Crime Category">Crime Category:</label>
+        
 
         <select name="Category" id="Category" required="required">
             <option value="" disabled selected>Category</option>
@@ -133,7 +118,7 @@
 </form>
 <br>
 <br>
-<div class="result" align="center"  style="color:black">
+<div class="result" align="center"  style="color:white">
 
     {% if warning != "" %}
         <p style="color: red; font-weight: bold;font-size:20px">{{ warning }}</p>
@@ -153,24 +138,5 @@
     <img src="../static/images/Crimes_Resolution.png" alt="resolutions_by_crime">
     <img src="../static/images/categories.png" alt="crime_categories">
     <img src="../static/images/Weekly_Crimes.png" alt="weekly_crimes"> 
-
-<button type="submit" class="btn btn-primary btn-block btn-small">Predict</button>
-</form>
-<br>
-<br>
-<div class="result" align="center">
-  {% if result %}
-    {% for variable, value in original_input.items() %}
-      <b>{{ variable }}</b> : {{ value }}
-    {% endfor %}
-  <br>
-    
-     <p style="font-size:50px">{{ result }}</p>
-  {% endif %}
-</div>
-<body>
-  <img src="/resolutions.png" alt="resolutions graph">
-  <img src="crimes_by_time_of_day.png" alt="crime times">
-
 </body>
 </html>

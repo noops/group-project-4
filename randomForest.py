@@ -4,6 +4,7 @@ from sklearn.metrics import balanced_accuracy_score
 from sklearn.metrics import confusion_matrix
 from imblearn.metrics import classification_report_imbalanced
 from sklearn.decomposition import PCA
+import pickle
 import pandas as pd 
 
 #load data
@@ -44,19 +45,20 @@ y_pred = brf.predict(X_test)
 
 
 # Calculated the balanced accuracy score
-balanced_acc_score = balanced_accuracy_score(y_test,y_pred)
-print(f"balanced accuracy score = {balanced_acc_score*100:.2f}%")
+# balanced_acc_score = balanced_accuracy_score(y_test,y_pred)
+# print(f"balanced accuracy score = {balanced_acc_score*100:.2f}%")
 
 
 # Print the imbalanced classification report
-print("imbalanced classification report")
-print(classification_report_imbalanced(y_test,y_pred))
+# print("imbalanced classification report")
+# print(classification_report_imbalanced(y_test,y_pred))
 
 # Display the confusion matrix
-cm = confusion_matrix(y_test, y_pred)
-cm_df = pd.DataFrame(cm, index=["Acutal 0", "Actual 1"], columns=["Predicted 0", "Predicted 1"])
-print(cm_df)
+# cm = confusion_matrix(y_test, y_pred)
+# cm_df = pd.DataFrame(cm, index=["Acutal 0", "Actual 1"], columns=["Predicted 0", "Predicted 1"])
+# print(cm_df)
 
-
+#save model into pickle file
+pickle.dump(brf, open('model_2.pkl', 'wb'))
  
 
