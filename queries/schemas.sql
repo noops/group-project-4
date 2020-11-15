@@ -11,7 +11,7 @@ CREATE TABLE sf_crime (
 -- Creation of geographic table
 
 CREATE TABLE geographic (
-	"PdId" bigint,
+	"PdId" bigint PRIMARY KEY,
 	"PdDistrict" character varying(50),
 	"Address" character varying(100),
 	"X" numeric(15,12),
@@ -23,7 +23,7 @@ CREATE TABLE geographic (
 -- Creation of crime_dates table
 
 CREATE TABLE crime_dates (
-	"PdId" bigint,
+	"PdId" bigint PRIMARY KEY,
 	"DayOfWeek" character varying(10),
 	"Date" date,
 	"Time" time
