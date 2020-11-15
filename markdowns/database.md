@@ -2,10 +2,12 @@
 
 ##### OVERVIEW
 A PostgreSql database has been created in AWS named _group4_.
-It contains three tables with raw data: **crime_dates**, **geographic** and **sf_crime connected** by **PdId** field.
+It contains three tables with raw data: **crime_dates**, **geographic** and **sf_crime connected** by **PdId** field. An additional table **encoded_data** contains preprocessed and encoded data of the columns required by the model.
 
 ![ERD](../images/ERD.PNG?raw=true)
-The schemas are as follow (file _queries/schemas.sql_).
+
+
+The schemas are as follows (file _queries/schemas.sql_).
 ```sql
     -- Creation of sf_crime table
     CREATE TABLE sf_crime (
@@ -18,7 +20,7 @@ The schemas are as follow (file _queries/schemas.sql_).
 
     -- Creation of geographic table
     CREATE TABLE geographic (
-        "PdId" bigint,
+        "PdId" bigint PRIMARY KEY,
         "PdDistrict" character varying(50),
         "Address" character varying(100),
         "X" numeric(15,12),
@@ -29,10 +31,22 @@ The schemas are as follow (file _queries/schemas.sql_).
 
     -- Creation of crime_dates table
     CREATE TABLE crime_dates (
-        "PdId" bigint,
+        "PdId" bigint PRIMARY KEY,
         "DayOfWeek" character varying(10),
         "Date" date,
         "Time" time
+    );
+
+    -- Creation of encoded_data table
+    CREATE TABLE encoded_data (
+        "Categories" int,
+        "Descriptions" int,
+        "PdDistricts" int,
+        "Months" int,
+        "Day" int,
+        "TimeOfDay" int,
+        "ZipCode" int,
+        "Resolutions" int
     );
 ```
 A complete view of all the data can be achieved with the following query (file _queries/queries.sql_):
@@ -45,8 +59,10 @@ A complete view of all the data can be achieved with the following query (file _
 ##### DATA LOAD
 * The data has already been loaded and can be accessed by simply connecting to the AWS database from your local.
 * To split the raw data into the desired tables the script _Notebooks/load_data.ipynb_ has been executed, additionally the zip code has been included as part of the geographic table and later a manual import has been performed.
-  **NOTE**: Automatic load has been discarded as an exhaustive test proved that a load using sqlalchemy module would take around 3h30' per table, no matter how the data was bucketed while a manual load was less than 3 seconds per table.
-  
+* Same process has been followed for encoded_data table. One manual import has been performed after the notebook _data_selection.ipynb_ creates the _encoded_df.csv_ file
+**NOTE**: Automatic load has been discarded as an exhaustive test proved that a load using sqlalchemy module would take around 3h30' per table, no matter how the data was bucketed while a manual load was less than 3 seconds per table.
+
+    
 ##### CONFIGURATION
 To access the database from a Notebook (ex. _Notebooks/new_cleaning_data.ipynb_) four variables should be configured. 
 
