@@ -31,8 +31,7 @@ div.parallax {
   height: auto;
 }
 
-
-
-
-
-
+.navbar-nav {
+  position: absolute;
+  right: 0;
+}

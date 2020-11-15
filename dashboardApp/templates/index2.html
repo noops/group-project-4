@@ -8,16 +8,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="../static/css/style.css">
-</head>
+  </head>
 
 <body style="font-family: 'Courier New', Courier, monospace;" class="bg-warning">
 
     <!--Navigation Bar with github url linked-->
     <div class="wrapper">
       <nav class="navbar navbar-dark bg-warning navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
           <a class="navbar-brand" href="https://github.com/noops/sanFranCrimePredictor"><b><font color="black"> 
             GitHub - sanFranCrimePredictor
           </font></b></a>
+          <div class="navbar-nav"  float="right">
+            <div class="nav-item dropdown">
+                <a href="/" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <img style="height: 25px;" src="../static/images/document_icon.png">
+                    <b style="color: black">Documentation</b>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/README" class="dropdown-item">README</a>
+                    <a href="/machineLearning" class="dropdown-item">Machine Learning</a>
+                    <a href="/database" class="dropdown-item">Database</a>
+                    <a href="/TECHNOLOGY" class="dropdown-item">Technology</a>
+                </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
     
