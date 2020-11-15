@@ -28,3 +28,17 @@ CREATE TABLE crime_dates (
 	"Date" date,
 	"Time" time
 );
+
+-- Creation of encoded_data table
+
+CREATE TABLE encoded_data (
+	"Categories" int,
+	"Descriptions" int,
+	"PdDistricts" int,
+	"Months" int,
+	"Day" int,
+	"TimeOfDay" int,
+	"ZipCode" int,
+	"Resolutions" int
+);
+
