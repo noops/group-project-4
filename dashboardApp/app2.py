@@ -14,8 +14,8 @@ import requests
 
 # url = 'https://group4ds-bucket.s3.amazonaws.com/model.pkl'
 # urllib.request.urlretrieve(url, 'model.pkl')
-model = pickle.load(open('model.pkl', 'rb'))
-df = pd.read_csv('./Resources/encoded_df.csv')
+# model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('./21.Project/bens_branch/sanFranCrimePredictor/dashboardApp/model.pkl', 'rb'))
 
 # initialize the app
 app = flask.Flask(__name__)
@@ -59,8 +59,13 @@ def formpost():
 
         available_zips=['94103', '94124', '94108', '94102', '94109', '94158', '94122', '94116', '94112', '94104', '94110', '94132', '94114', '94131', '94134', '94117', '94115', '94105', '94127', '94118', '94111', '94123', '94107', '94130', '94129']
 
+        outcome = ""
+        
+        #check the zipcode is a valid San Francisco
+        if (not re.match("941\\d{2}",zip_code)):
+            outcome=f"'{zip_code}' doesn't match any San Francisco ZipCode"
 
-        if zip_code in available_zips:
+        elif zip_code in available_zips:
 
             #create dataframe for model
             input_variables = pd.DataFrame([[day_of_week, time_of_day, police_district, crime_category, zip_code]], columns=['Dow', 'Tod', 'district', 'category', 'zip'], dtype=int)
@@ -76,16 +81,13 @@ def formpost():
             else:
                 outcome = "You've most likely been arrested"
 
-            results_dict = {'prediction':str(prediction), 'outcome':str(outcome), 'Day of Week': str(day.get(day_of_week)), 'Time of Day': str(time.get(time_of_day)), 'Police District': str(pddistrict.get(police_district)),
-                         'Crime Category': str(category.get(crime_category)), 'Zip Code': str(zip_code)}
-        
         else:
             
             outcome = "No available data for introduced ZipCode."
 
-            results_dict = {'outcome':str(outcome)}
+        results_dict = {'outcome':str(outcome), 'Day of Week': str(day.get(day_of_week)), 'Time of Day': str(time.get(time_of_day)), 'Police District': str(pddistrict.get(police_district)),
+                         'Crime Category': str(category.get(crime_category)), 'Zip Code': str(zip_code)}
 
-        
         return jsonify(results_dict)
         
 
