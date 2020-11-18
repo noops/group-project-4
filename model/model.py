@@ -7,13 +7,21 @@ import pickle
 import boto3
 import os
 import config as cfg
+from config import db_user, db_password, db_name, endpoint
+from sqlalchemy import create_engine
+import psycopg2
+
+# connection
+db_string = f"postgres://{db_user}:{db_password}@{endpoint}:5432/{db_name}"
+engine = create_engine(db_string)
 
 # load data
 print(f"Importing data...\n")
-df = pd.read_csv('../Resources/encoded_df.csv')
+df = pd.read_sql_table(table_name="encoded_data",con=engine)
 df = df.drop(columns='Descriptions')
 df = df.drop(columns='Months')
-df = df.drop(columns='ZipCode')
+
+
 # create features
 X = df.drop("Resolutions", axis=1)
 
@@ -33,6 +41,7 @@ y_pred = brf.predict(X_test)
 # save model via pickle
 print(f"Saving model to pickle file...\n")
 pickle.dump(brf, open('model.pkl', 'wb'))
+
 
 # upload our pickle file to s3 so it can be read by dashboard app
 if os.path.exists("model.pkl"):

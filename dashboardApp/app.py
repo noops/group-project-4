@@ -5,6 +5,8 @@ import numpy as np
 import pandas as pd
 import pickle
 import urllib.request
+from config import db_user, db_password, db_name, endpoint
+from sqlalchemy import create_engine
 import re
 import json
 
@@ -14,7 +16,13 @@ import json
 # url = 'https://group4ds-bucket.s3.amazonaws.com/model.pkl'
 # urllib.request.urlretrieve(url, 'model.pkl')
 model = pickle.load(open('model.pkl', 'rb'))
-df = pd.read_csv('./Resources/encoded_df.csv')
+
+# Get ZipCodes from DB
+db_string = f"postgres://{db_user}:{db_password}@{endpoint}:5432/{db_name}"
+engine = create_engine(db_string)
+zip_df = pd.read_sql_table(table_name="encoded_data",con=engine, columns=["ZipCode"])
+available_zips = zip_df['ZipCode'].apply(str).unique()
+
 
 # initialize the app
 app = flask.Flask(__name__)
@@ -58,8 +66,6 @@ def formpost():
             warning=f"'{zip_code}' doesn't match SFO ZipCode"
             
 
-        available_zips=['94103', '94124', '94108', '94102', '94109', '94158', '94122', '94116', '94112', '94104', '94110', '94132', '94114', '94131', '94134', '94117', '94115', '94105', '94127', '94118', '94111', '94123', '94107', '94130', '94129']
-        
         if zip_code in available_zips:
 
             #create dataframe for model
@@ -89,7 +95,11 @@ def formpost():
                         'Crime Category': category.get(crime_category),
                         'Zip Code': zip_code}, 
         result = outcome )  
-        
+
+
+@app.route('/<markdown>', methods=['GET'])
+def marks(markdown):
+    return render_template(markdown + '.html')
 
 
 if __name__ == "__main__":
