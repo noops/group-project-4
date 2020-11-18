@@ -8,6 +8,8 @@ import urllib.request
 import re
 import json
 import requests
+from config import db_user, db_password, db_name, endpoint
+from sqlalchemy import create_engine
 
 # with urllib.request.urlopen('https://group4ds-bucket.s3.amazonaws.com/model.pkl') as response:
 #     pickle = response.read()
@@ -16,6 +18,12 @@ import requests
 # url = 'https://group4ds-bucket.s3.amazonaws.com/model.pkl'
 # urllib.request.urlretrieve(url, 'model.pkl')
 model = pickle.load(open('model.pkl', 'rb'))
+
+# Get ZipCodes from DB
+db_string = f"postgres://{db_user}:{db_password}@{endpoint}:5432/{db_name}"
+engine = create_engine(db_string)
+zip_df = pd.read_sql_table(table_name="encoded_data",con=engine, columns=["ZipCode"])
+available_zips = zip_df['ZipCode'].apply(str).unique()
 
 # initialize the app
 app = flask.Flask(__name__)
@@ -48,8 +56,6 @@ def formpost():
 
         category = {'16': 'WEAPON LAWS', '15': 'WARRANTS', '6': 'NON-CRIMINAL', '0': 'ASSAULT', '8': 'OTHER OFFENSES', '5': 'MISSING PERSON', '4': 'LARCENY/THEFT', '1': 'BURGLARY',
                     '7': 'OTHER', '9': 'ROBBERY', '3': 'FRAUD', '2': 'DRUG/NARCOTIC', '14': 'VEHICLE THEFT', '13': 'VANDALISM', '10': 'SECONDARY CODES', '11': 'SUSPICIOUS OCC', '12': 'TRESPASS'}
-
-        available_zips=['94103', '94124', '94108', '94102', '94109', '94158', '94122', '94116', '94112', '94104', '94110', '94132', '94114', '94131', '94134', '94117', '94115', '94105', '94127', '94118', '94111', '94123', '94107', '94130', '94129']
 
         outcome = ""
         
