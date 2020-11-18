@@ -12,17 +12,13 @@ import requests
 # with urllib.request.urlopen('https://group4ds-bucket.s3.amazonaws.com/model.pkl') as response:
 #     pickle = response.read()
 
+# load the model
 # url = 'https://group4ds-bucket.s3.amazonaws.com/model.pkl'
 # urllib.request.urlretrieve(url, 'model.pkl')
-# model = pickle.load(open('model.pkl', 'rb'))
-model = pickle.load(open('./21.Project/bens_branch/sanFranCrimePredictor/dashboardApp/model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
 # initialize the app
 app = flask.Flask(__name__)
-# load the model
-model = pickle.load(
-    open('model.pkl', 'rb'))
-
 
 # redirect the api to homepage
 @app.route('/', methods=['GET'])
@@ -30,10 +26,6 @@ def main():
     #if flask.request.method == 'GET':
         return render_template('index3.html')
 
-
-        
-# @app.route('/formpost/<data>', methods=['POST'])
-# def formpost(data):
 
 @app.route('/formpost', methods=['POST'])
 def formpost():
@@ -90,6 +82,10 @@ def formpost():
 
         return jsonify(results_dict)
         
+
+@app.route('/<markdown>', methods=['GET'])
+def marks(markdown):
+    return render_template(markdown + '.html')
 
 
 if __name__ == "__main__":
