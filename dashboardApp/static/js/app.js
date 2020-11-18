@@ -31,9 +31,15 @@ function resultButton() {
             'Accept': 'application/json'
         },
         success: function (results_dict) {
-            console.log(results_dict)
-            document.getElementById("modalResult").innerText = JSON.stringify(results_dict)
-            
+
+            modal_message = "Crime Category : "+results_dict["Crime Category"]
+            + "\nDay of Week : "+results_dict["Day of Week"]
+            + "\nPolice District : "+results_dict["Police District"]
+            + "\nTime of Day : "+results_dict["Time of Day"]
+            + "\nZip Code : "+results_dict["Zip Code"]
+            + "\n\n"+results_dict["outcome"]
+
+            document.getElementById("modalResult").innerText = modal_message            
         }
         
   })
