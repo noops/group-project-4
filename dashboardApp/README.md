@@ -12,3 +12,7 @@ docker start team4
 
 #removing
 docker stop team4 && docker rm team4
+
+docker tag team4 registry.digitalocean.com/dsbootcamp/team4
+docker push registry.digitalocean.com/dsbootcamp/team4
+

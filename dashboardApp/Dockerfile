@@ -4,7 +4,9 @@ COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN apt-get update -y && apt install python3-pip -y
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    libpq-dev
 
 RUN pip3 install -r requirements.txt
 
